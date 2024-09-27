@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["cross_platform", "inherit_metadata"]
 lock_version = "4.4.2"
-content_hash = "sha256:2e78f7d8392e99cf0545b6823eefcc8255aa28dfee2f86caeabab29a7c5a4b9f"
+content_hash = "sha256:02c3c55371ad3242ab8669e08e78d037fba16d7fab02379bfebff62b5b34541e"
 
 [[package]]
 name = "annotated-types"
@@ -16,6 +16,19 @@ groups = ["default"]
 files = [
     {file = "annotated_types-0.7.0-py3-none-any.whl", hash = "sha256:1f02e8b43a8fbbc3f3e0d4f0f4bfc8131bcb4eebe8849b8e5c773f3a1c582a53"},
     {file = "annotated_types-0.7.0.tar.gz", hash = "sha256:aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"},
+]
+
+[[package]]
+name = "asttokens"
+version = "2.4.1"
+summary = "Annotate AST trees with source code positions"
+groups = ["default"]
+dependencies = [
+    "six>=1.12.0",
+]
+files = [
+    {file = "asttokens-2.4.1-py2.py3-none-any.whl", hash = "sha256:051ed49c3dcae8913ea7cd08e46a606dba30b79993209636c4875bc1d637bc24"},
+    {file = "asttokens-2.4.1.tar.gz", hash = "sha256:b03869718ba9a6eb027e134bfdf69f38a236d681c83c160d510768af11254ba0"},
 ]
 
 [[package]]
@@ -75,10 +88,60 @@ version = "0.4.6"
 requires_python = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 summary = "Cross-platform colored terminal text."
 groups = ["default"]
-marker = "platform_system == \"Windows\""
+marker = "platform_system == \"Windows\" or sys_platform == \"win32\""
 files = [
     {file = "colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"},
     {file = "colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"},
+]
+
+[[package]]
+name = "cypari"
+version = "2.5.5"
+summary = "Sage's PARI extension, modified to stand alone."
+groups = ["default"]
+files = [
+    {file = "cypari-2.5.5-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:f1052ff08bc9108e43bdbc93cc9cf215bd342c4e9b65ac485d6dd248b2a5a34f"},
+    {file = "cypari-2.5.5-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:765f63353d4f9e57e9fa9cfe44d2a9307b1dfd0cba3cfa4e841546645e201acd"},
+    {file = "cypari-2.5.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9932bf445722152639d9c9edee3bfca5e27849d8d5d5ff9c86c8e538a21e6734"},
+    {file = "cypari-2.5.5-cp312-cp312-win_amd64.whl", hash = "sha256:857eb176cbe36b9d2c76d529d5e70a3443314e2f68d07dcd64c8df700ebf383f"},
+]
+
+[[package]]
+name = "decorator"
+version = "5.1.1"
+requires_python = ">=3.5"
+summary = "Decorators for Humans"
+groups = ["default"]
+files = [
+    {file = "decorator-5.1.1-py3-none-any.whl", hash = "sha256:b8c3f85900b9dc423225913c5aace94729fe1fa9763b38939a95226f02d37186"},
+    {file = "decorator-5.1.1.tar.gz", hash = "sha256:637996211036b6385ef91435e4fae22989472f9d571faba8927ba8253acbc330"},
+]
+
+[[package]]
+name = "executing"
+version = "2.1.0"
+requires_python = ">=3.8"
+summary = "Get the currently executing AST node of a frame, and other information"
+groups = ["default"]
+files = [
+    {file = "executing-2.1.0-py2.py3-none-any.whl", hash = "sha256:8d63781349375b5ebccc3142f4b30350c0cd9c79f921cde38be2be4637e98eaf"},
+    {file = "executing-2.1.0.tar.gz", hash = "sha256:8ea27ddd260da8150fa5a708269c4a10e76161e2496ec3e587da9e3c0fe4b9ab"},
+]
+
+[[package]]
+name = "fxrays"
+version = "1.3.5"
+requires_python = ">=3"
+summary = "Computes extremal rays with filtering"
+groups = ["default"]
+files = [
+    {file = "FXrays-1.3.5-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:3af4012e074f5c222dd83d0716a88e05b1e5c7620903019813c83ecc044a8f5b"},
+    {file = "FXrays-1.3.5-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:9ff04ef40cba8510c4dd892d8c9c8b0a7d3719a5fb76d235a4133fedb3db6dc8"},
+    {file = "FXrays-1.3.5-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:2891e44284c5f691c77c5877c353a5a537d4a97acc8bc1c1f2952b2283d55852"},
+    {file = "FXrays-1.3.5-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f421476345ec6fcd7f7942719af070dbfbe71df7f07806cbe3c3f6c9b84f480d"},
+    {file = "FXrays-1.3.5-cp312-cp312-win32.whl", hash = "sha256:f7eb01240b46b4cb87005b9cf1c209d29e1071689515086b56e4575dbba726f7"},
+    {file = "FXrays-1.3.5-cp312-cp312-win_amd64.whl", hash = "sha256:8e5af82ae6a5c09d9755792589b0e3d8d710351f864f83d8577f46c7ab3076b1"},
+    {file = "FXrays-1.3.5.tar.gz", hash = "sha256:534a4d7096bead5203dc4ef196e9ad6fd0604c06994a7c51c82d25d14e57020d"},
 ]
 
 [[package]]
@@ -125,6 +188,178 @@ groups = ["default"]
 files = [
     {file = "idna-3.10-py3-none-any.whl", hash = "sha256:946d195a0d259cbba61165e88e65941f16e9b36ea6ddb97f00452bae8b1287d3"},
     {file = "idna-3.10.tar.gz", hash = "sha256:12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"},
+]
+
+[[package]]
+name = "ipython"
+version = "8.27.0"
+requires_python = ">=3.10"
+summary = "IPython: Productive Interactive Computing"
+groups = ["default"]
+dependencies = [
+    "colorama; sys_platform == \"win32\"",
+    "decorator",
+    "jedi>=0.16",
+    "matplotlib-inline",
+    "pexpect>4.3; sys_platform != \"win32\" and sys_platform != \"emscripten\"",
+    "prompt-toolkit<3.1.0,>=3.0.41",
+    "pygments>=2.4.0",
+    "stack-data",
+    "traitlets>=5.13.0",
+]
+files = [
+    {file = "ipython-8.27.0-py3-none-any.whl", hash = "sha256:f68b3cb8bde357a5d7adc9598d57e22a45dfbea19eb6b98286fa3b288c9cd55c"},
+    {file = "ipython-8.27.0.tar.gz", hash = "sha256:0b99a2dc9f15fd68692e898e5568725c6d49c527d36a9fb5960ffbdeaa82ff7e"},
+]
+
+[[package]]
+name = "jedi"
+version = "0.19.1"
+requires_python = ">=3.6"
+summary = "An autocompletion tool for Python that can be used for text editors."
+groups = ["default"]
+dependencies = [
+    "parso<0.9.0,>=0.8.3",
+]
+files = [
+    {file = "jedi-0.19.1-py2.py3-none-any.whl", hash = "sha256:e983c654fe5c02867aef4cdfce5a2fbb4a50adc0af145f70504238f18ef5e7e0"},
+    {file = "jedi-0.19.1.tar.gz", hash = "sha256:cf0496f3651bc65d7174ac1b7d043eff454892c708a87d1b683e57b569927ffd"},
+]
+
+[[package]]
+name = "knot-floer-homology"
+version = "1.2"
+summary = "Python wrapper for Zoltán Szabó's HFK Calculator"
+groups = ["default"]
+files = [
+    {file = "knot_floer_homology-1.2-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:25c273894990a9472ca5042749f3406b072b0473dc236896281b21f236c98e54"},
+    {file = "knot_floer_homology-1.2-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:d9787dc5c141a21c5ebdaa484f4bd8758521019de73d9a7c8a8ce66e9bfcf1b4"},
+    {file = "knot_floer_homology-1.2-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:1be99d4c768464bffabfa071aa7ce9c739e85e3be60afe58f2c2bf13a957f66e"},
+    {file = "knot_floer_homology-1.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d24c41920f21ebd184c8fde3158ebdd81fbf777bad589b81dd0f5d643bf83f4f"},
+    {file = "knot_floer_homology-1.2-cp312-cp312-win32.whl", hash = "sha256:f06d26d9d6faa0b36aa6dc87148c57f483ad2bff9cfa5439990c77735a214ee6"},
+    {file = "knot_floer_homology-1.2-cp312-cp312-win_amd64.whl", hash = "sha256:d3d2b21e1f1dfbcaa2ce638461fd1ecc314a5f0a6795607ad0b4389f14eefc30"},
+    {file = "knot_floer_homology-1.2.tar.gz", hash = "sha256:0b51c5f51b07693414a32417c3484700780ea3e5612384c19c8b7dc5633c4021"},
+]
+
+[[package]]
+name = "low-index"
+version = "1.2"
+summary = "Enumerates low index subgroups of a finitely presented group"
+groups = ["default"]
+files = [
+    {file = "low_index-1.2-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:64818bf25d906316803f228e634f0678bbd3ca1304c9e549d5b06edf8ba58079"},
+    {file = "low_index-1.2-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:a87f888b809b607202f5d493b7babe15a78b83c61c1aa6dbf11f4ffe045dd091"},
+    {file = "low_index-1.2-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:5fb4ba10f4cce6ecd627244351d9c078a3b8e7946c764daa234d09b0ac515171"},
+    {file = "low_index-1.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5007f42c4ab5c367dfd51a5401b9532ff84af5734e1a6eebedac4ff3ee704277"},
+    {file = "low_index-1.2-cp312-cp312-win32.whl", hash = "sha256:d6ea034f48315c8fb2da91c66256d0c4e07c5da6058b2b216359a0d817c97bfb"},
+    {file = "low_index-1.2-cp312-cp312-win_amd64.whl", hash = "sha256:f3f348d8943092a6292dc8e244a85628bd526c6b5cba2a56c0c1bab89146af7a"},
+    {file = "low_index-1.2.tar.gz", hash = "sha256:d86bdacab1efd19bad22baef7b3ffc66aa950153fd3ebb738f27c2cb12668419"},
+]
+
+[[package]]
+name = "matplotlib-inline"
+version = "0.1.7"
+requires_python = ">=3.8"
+summary = "Inline Matplotlib backend for Jupyter"
+groups = ["default"]
+dependencies = [
+    "traitlets",
+]
+files = [
+    {file = "matplotlib_inline-0.1.7-py3-none-any.whl", hash = "sha256:df192d39a4ff8f21b1895d72e6a13f5fcc5099f00fa84384e0ea28c2cc0653ca"},
+    {file = "matplotlib_inline-0.1.7.tar.gz", hash = "sha256:8423b23ec666be3d16e16b60bdd8ac4e86e840ebd1dd11a30b9f117f2fa0ab90"},
+]
+
+[[package]]
+name = "networkx"
+version = "3.3"
+requires_python = ">=3.10"
+summary = "Python package for creating and manipulating graphs and networks"
+groups = ["default"]
+files = [
+    {file = "networkx-3.3-py3-none-any.whl", hash = "sha256:28575580c6ebdaf4505b22c6256a2b9de86b316dc63ba9e93abde3d78dfdbcf2"},
+    {file = "networkx-3.3.tar.gz", hash = "sha256:0c127d8b2f4865f59ae9cb8aafcd60b5c70f3241ebd66f7defad7c4ab90126c9"},
+]
+
+[[package]]
+name = "packaging"
+version = "24.1"
+requires_python = ">=3.8"
+summary = "Core utilities for Python packages"
+groups = ["default"]
+files = [
+    {file = "packaging-24.1-py3-none-any.whl", hash = "sha256:5b8f2217dbdbd2f7f384c41c628544e6d52f2d0f53c6d0c3ea61aa5d1d7ff124"},
+    {file = "packaging-24.1.tar.gz", hash = "sha256:026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"},
+]
+
+[[package]]
+name = "parso"
+version = "0.8.4"
+requires_python = ">=3.6"
+summary = "A Python Parser"
+groups = ["default"]
+files = [
+    {file = "parso-0.8.4-py2.py3-none-any.whl", hash = "sha256:a418670a20291dacd2dddc80c377c5c3791378ee1e8d12bffc35420643d43f18"},
+    {file = "parso-0.8.4.tar.gz", hash = "sha256:eb3a7b58240fb99099a345571deecc0f9540ea5f4dd2fe14c2a99d6b281ab92d"},
+]
+
+[[package]]
+name = "pexpect"
+version = "4.9.0"
+summary = "Pexpect allows easy control of interactive console applications."
+groups = ["default"]
+marker = "sys_platform != \"win32\" and sys_platform != \"emscripten\""
+dependencies = [
+    "ptyprocess>=0.5",
+]
+files = [
+    {file = "pexpect-4.9.0-py2.py3-none-any.whl", hash = "sha256:7236d1e080e4936be2dc3e326cec0af72acf9212a7e1d060210e70a47e253523"},
+    {file = "pexpect-4.9.0.tar.gz", hash = "sha256:ee7d41123f3c9911050ea2c2dac107568dc43b2d3b0c7557a33212c398ead30f"},
+]
+
+[[package]]
+name = "plink"
+version = "2.4.2"
+summary = "A full featured Tk-based knot and link editor"
+groups = ["default"]
+files = [
+    {file = "plink-2.4.2-py3-none-any.whl", hash = "sha256:dc001e0a3513129216616e82e369c6b96d5a4b2843caaca0f250d3e247c1d608"},
+    {file = "plink-2.4.2.tar.gz", hash = "sha256:51d11471adb5faad98572c34f377672e0d077b586b79be36237365bc682fdf9a"},
+]
+
+[[package]]
+name = "prompt-toolkit"
+version = "3.0.48"
+requires_python = ">=3.7.0"
+summary = "Library for building powerful interactive command lines in Python"
+groups = ["default"]
+dependencies = [
+    "wcwidth",
+]
+files = [
+    {file = "prompt_toolkit-3.0.48-py3-none-any.whl", hash = "sha256:f49a827f90062e411f1ce1f854f2aedb3c23353244f8108b89283587397ac10e"},
+    {file = "prompt_toolkit-3.0.48.tar.gz", hash = "sha256:d6623ab0477a80df74e646bdbc93621143f5caf104206aa29294d53de1a03d90"},
+]
+
+[[package]]
+name = "ptyprocess"
+version = "0.7.0"
+summary = "Run a subprocess in a pseudo terminal"
+groups = ["default"]
+marker = "sys_platform != \"win32\" and sys_platform != \"emscripten\""
+files = [
+    {file = "ptyprocess-0.7.0-py2.py3-none-any.whl", hash = "sha256:4b41f3967fce3af57cc7e94b888626c18bf37a083e3651ca8feeb66d492fef35"},
+    {file = "ptyprocess-0.7.0.tar.gz", hash = "sha256:5c5d0a3b48ceee0b48485e0c26037c0acd7d29765ca3fbb5cb3831d347423220"},
+]
+
+[[package]]
+name = "pure-eval"
+version = "0.2.3"
+summary = "Safely evaluate AST nodes without side effects"
+groups = ["default"]
+files = [
+    {file = "pure_eval-0.2.3-py3-none-any.whl", hash = "sha256:1db8e35b67b3d218d818ae653e27f06c3aa420901fa7b081ca98cbedc874e0d0"},
+    {file = "pure_eval-0.2.3.tar.gz", hash = "sha256:5f4e983f40564c576c7c8635ae88db5956bb2229d7e9237d03b3c0b0190eaf42"},
 ]
 
 [[package]]
@@ -200,6 +435,27 @@ files = [
 ]
 
 [[package]]
+name = "pygments"
+version = "2.18.0"
+requires_python = ">=3.8"
+summary = "Pygments is a syntax highlighting package written in Python."
+groups = ["default"]
+files = [
+    {file = "pygments-2.18.0-py3-none-any.whl", hash = "sha256:b8e6aca0523f3ab76fee51799c488e38782ac06eafcf95e7ba832985c8e7b13a"},
+    {file = "pygments-2.18.0.tar.gz", hash = "sha256:786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"},
+]
+
+[[package]]
+name = "pypng"
+version = "0.20220715.0"
+summary = "Pure Python library for saving and loading PNG images"
+groups = ["default"]
+files = [
+    {file = "pypng-0.20220715.0-py3-none-any.whl", hash = "sha256:4a43e969b8f5aaafb2a415536c1a8ec7e341cd6a3f957fd5b5f32a4cfeed902c"},
+    {file = "pypng-0.20220715.0.tar.gz", hash = "sha256:739c433ba96f078315de54c0db975aee537cbc3e1d0ae4ed9aab0ca1e427e2c1"},
+]
+
+[[package]]
 name = "python-dotenv"
 version = "1.0.1"
 requires_python = ">=3.8"
@@ -246,6 +502,92 @@ files = [
 ]
 
 [[package]]
+name = "six"
+version = "1.16.0"
+requires_python = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
+summary = "Python 2 and 3 compatibility utilities"
+groups = ["default"]
+files = [
+    {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
+    {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
+]
+
+[[package]]
+name = "snappy"
+version = "3.1.1"
+requires_python = ">=3"
+summary = "Studying the topology and geometry of 3-manifolds, with a focus on hyperbolic structures."
+groups = ["default"]
+dependencies = [
+    "FXrays>=1.3",
+    "cypari>=2.3",
+    "decorator",
+    "ipython>=1.0",
+    "low-index>=1.2",
+    "packaging",
+    "plink>=2.4.2",
+    "pypng",
+    "snappy-manifolds>=1.2",
+    "spherogram>=2.2",
+]
+files = [
+    {file = "snappy-3.1.1-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:4e02ada44af1818e057637b44b161ac2199707713a54ea1b94a60db3849267d8"},
+    {file = "snappy-3.1.1-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:080afc114e7c534a8e96dd082e070fd77399afa8b34a2a8bb190cca106d2b5bf"},
+    {file = "snappy-3.1.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:03ade732a55332de19118a3b95986b49fcc2feb13b10a23461c689a380139269"},
+    {file = "snappy-3.1.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:dba49daa8834ae86e272f3ecfb3f78db6c3c36573cf1496e702ecea8eded4731"},
+    {file = "snappy-3.1.1-cp312-cp312-win32.whl", hash = "sha256:5cb275aae6bf130d0393ea5ae42cf8de7792acaf1af2ad8662e2bb724f96e886"},
+    {file = "snappy-3.1.1-cp312-cp312-win_amd64.whl", hash = "sha256:7e5d463878f2c0ec4606e8fb2e4cf5cffeeafe673d90d43275dd300571a70e67"},
+    {file = "snappy-3.1.1.tar.gz", hash = "sha256:da771a4b07bba9f679525b718cfbf5bf98364ead81a5d102e6f2f4a5ecb789fe"},
+]
+
+[[package]]
+name = "snappy-manifolds"
+version = "1.2"
+summary = "Database of snappy manifolds"
+groups = ["default"]
+files = [
+    {file = "snappy_manifolds-1.2-py3-none-any.whl", hash = "sha256:9cdac929a2c1f5179cb761a6acb9a939560206708d1067788ce462333e1a9274"},
+    {file = "snappy_manifolds-1.2.tar.gz", hash = "sha256:cfde91decee88b827532b7115782529581b9b18585a5e1446c0e90d8d2779dfb"},
+]
+
+[[package]]
+name = "spherogram"
+version = "2.2.1"
+requires_python = ">=3"
+summary = "Spherical diagrams for 3-manifold topology"
+groups = ["default"]
+dependencies = [
+    "decorator",
+    "knot-floer-homology>=1.2",
+    "networkx",
+    "snappy-manifolds>=1.1.2",
+]
+files = [
+    {file = "spherogram-2.2.1-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:1717510b1279bea9eafe0e7b660af8240ebd490a98a895aa896be467c2347181"},
+    {file = "spherogram-2.2.1-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:2a3f37d381ca8ba0c6f18aa9aa16b4b018d2d47cf26a34f40b2f4fca9754ae85"},
+    {file = "spherogram-2.2.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:35e4b5b454b18ad7a71769c2688aa4ad4e6b380128dab6440569406e2a1be89c"},
+    {file = "spherogram-2.2.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:84578ac6a3aaea602de8e385d4b2b1a9dd1174b0e2ff1cc3d5d491e386d0a6d2"},
+    {file = "spherogram-2.2.1-cp312-cp312-win32.whl", hash = "sha256:9629385468e24b9ad464aa9c5d1e8b45f2cee86d58ebb3baf831250aab082ae9"},
+    {file = "spherogram-2.2.1-cp312-cp312-win_amd64.whl", hash = "sha256:ccd1625f23a112a6e89c0ad381d80e78173526114a12f6cfd1821887e6ad2c70"},
+    {file = "spherogram-2.2.1.tar.gz", hash = "sha256:315d80ff15357ba1c2c005980bfc77374a3990be2c292bbe7517388347c0327c"},
+]
+
+[[package]]
+name = "stack-data"
+version = "0.6.3"
+summary = "Extract data from python stack frames and tracebacks for informative displays"
+groups = ["default"]
+dependencies = [
+    "asttokens>=2.1.0",
+    "executing>=1.2.0",
+    "pure-eval",
+]
+files = [
+    {file = "stack_data-0.6.3-py3-none-any.whl", hash = "sha256:d5558e0c25a4cb0853cddad3d77da9891a08cb85dd9f9f91b9f8cd66e511e695"},
+    {file = "stack_data-0.6.3.tar.gz", hash = "sha256:836a778de4fec4dcd1dcd89ed8abff8a221f58308462e1c4aa2a3cf30148f0b9"},
+]
+
+[[package]]
 name = "tqdm"
 version = "4.66.5"
 requires_python = ">=3.7"
@@ -257,6 +599,17 @@ dependencies = [
 files = [
     {file = "tqdm-4.66.5-py3-none-any.whl", hash = "sha256:90279a3770753eafc9194a0364852159802111925aa30eb3f9d85b0e805ac7cd"},
     {file = "tqdm-4.66.5.tar.gz", hash = "sha256:e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"},
+]
+
+[[package]]
+name = "traitlets"
+version = "5.14.3"
+requires_python = ">=3.8"
+summary = "Traitlets Python configuration system"
+groups = ["default"]
+files = [
+    {file = "traitlets-5.14.3-py3-none-any.whl", hash = "sha256:b74e89e397b1ed28cc831db7aea759ba6640cb3de13090ca145426688ff1ac4f"},
+    {file = "traitlets-5.14.3.tar.gz", hash = "sha256:9ed0579d3502c94b4b3732ac120375cda96f923114522847de4b3bb98b96b6b7"},
 ]
 
 [[package]]
@@ -279,4 +632,14 @@ groups = ["default"]
 files = [
     {file = "urllib3-2.2.3-py3-none-any.whl", hash = "sha256:ca899ca043dcb1bafa3e262d73aa25c465bfb49e0bd9dd5d59f1d0acba2f8fac"},
     {file = "urllib3-2.2.3.tar.gz", hash = "sha256:e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"},
+]
+
+[[package]]
+name = "wcwidth"
+version = "0.2.13"
+summary = "Measures the displayed width of unicode strings in a terminal"
+groups = ["default"]
+files = [
+    {file = "wcwidth-0.2.13-py2.py3-none-any.whl", hash = "sha256:3da69048e4540d84af32131829ff948f1e022c1c6bdb8d6102117aac784f6859"},
+    {file = "wcwidth-0.2.13.tar.gz", hash = "sha256:72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"},
 ]
