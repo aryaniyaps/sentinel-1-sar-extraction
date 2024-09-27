@@ -1,11 +1,11 @@
-from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import SecretStr
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    sentinel_api_username: str
+    sentinel_hub_client_id: str
 
-    sentinel_api_password: SecretStr
+    sentinel_hub_client_secret: SecretStr
 
     model_config = SettingsConfigDict(
         env_file=".env",

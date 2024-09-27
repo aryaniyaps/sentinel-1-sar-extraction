@@ -1,35 +1,68 @@
-from sentinelsat import SentinelAPI, read_geojson, geojson_to_wkt
+import geopandas as gpd
+from sentinelhub import (
+    CRS,
+    BBox,
+    DataCollection,
+    MimeType,
+    MosaickingOrder,
+    SentinelHubRequest,
+    SHConfig,
+    bbox_to_dimensions,
+)
+
 from config import settings
 
-# Connect to the Copernicus Data Space Ecosystem API
-api = SentinelAPI(
-    settings.sentinel_api_username,
-    settings.sentinel_api_password,
-    "https://apihub.copernicus.eu/dhus",
+# Load your Sentinel Hub credentials
+config = SHConfig(
+    sh_base_url="https://sh.dataspace.copernicus.eu",
+    sh_token_url="https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/token",
+    sh_client_id=settings.sentinel_hub_client_id,
+    sh_client_secret=settings.sentinel_hub_client_secret.get_secret_value(),
 )
 
-# Define your area of interest (AOI) in GeoJSON format
-# Alternatively, you can point this to a local geojson file
-footprint = geojson_to_wkt(read_geojson("../extraction_areas/mumbai_offshore.geojson"))
+# Load the GeoJSON area of interest (AOI)
+aoi = gpd.read_file("extraction_areas/mumbai_offshore.geojson")
 
-# Search for Sentinel-1 SAR data (VV polarization, IW mode, GRD products)
-products = api.query(
-    footprint,
-    date=("20230901", "20230930"),  # Date range for the search
-    platformname="Sentinel-1",
-    producttype="GRD",
-    sensoroperationalmode="IW",  # Interferometric Wide (IW) swath mode
-    polarisationmode="VV",
-    cloudcoverpercentage=(0, 30),  # Only select images with low cloud cover
+# Convert the AOI to a bounding box (min_x, min_y, max_x, max_y format)
+min_x, min_y, max_x, max_y = aoi.total_bounds
+bbox = BBox(bbox=[min_x, min_y, max_x, max_y], crs=CRS.WGS84)  # type:ignore[arg-type]
+
+# Define the size of the bounding box area (in pixels)
+bbox_size = bbox_to_dimensions(bbox, resolution=30)  # Adjust resolution as needed
+
+print(f"BBox dimensions: {bbox_size}")
+
+# Create a request for Sentinel-1 SAR data (VV polarization)
+request = SentinelHubRequest(
+    data_folder="./downloads",  # Set your download directory
+    evalscript="""
+        //VERSION=3
+        function setup() {
+          return {
+            input: ["VV"],
+            output: { bands: 1 }
+          };
+        }
+
+        function evaluatePixel(sample) {
+          return [sample.VV];
+        }
+    """,
+    input_data=[
+        SentinelHubRequest.input_data(
+            data_collection=DataCollection.SENTINEL1_IW.define_from(
+                "s1iw", service_url=config.sh_base_url
+            ),
+            time_interval=("2018-09-01", "2023-09-30"),  # Date range
+            mosaicking_order=MosaickingOrder.MOST_RECENT,  # Mosaicking order by most recent images
+        )
+    ],
+    bbox=bbox,
+    size=bbox_size,
+    responses=[SentinelHubRequest.output_response("default", MimeType.TIFF)],
+    config=config,
 )
 
-# Print the search results
-print(f"Found {len(products)} products.")
-
-# Download the products to a specified directory
-download_dir = "./downloads"
-for product_id, product_info in products.items():
-    print(f"Downloading: {product_info['title']}")
-    api.download(product_id, directory_path=download_dir)
-
-print("Download complete.")
+# Execute the request and download the products
+data = request.get_data(save_data=True, show_progress=True)
+print(f"Downloaded {len(data)} images.")

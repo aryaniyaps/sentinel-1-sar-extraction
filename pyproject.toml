@@ -6,9 +6,11 @@ authors = [
     {name = "Aryan Iyappan", email = "aryaniyappan2006@gmail.com"},
 ]
 dependencies = [
-    "sentinelsat>=1.2.1",
+    "pydantic>=2.9.2",
     "pydantic-settings>=2.5.2",
     "snappy>=3.1.1",
+    "sentinelhub>=3.11.1",
+    "geopandas>=1.0.1",
 ]
 requires-python = "==3.12.*"
 readme = "README.md"
