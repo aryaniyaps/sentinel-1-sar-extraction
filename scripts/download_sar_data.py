@@ -10,7 +10,7 @@ api = SentinelAPI(
 
 # Define your area of interest (AOI) in GeoJSON format
 # Alternatively, you can point this to a local geojson file
-footprint = geojson_to_wkt(read_geojson("path_to_aoi.geojson"))
+footprint = geojson_to_wkt(read_geojson("../extraction_areas/mumbai_offshore.geojson"))
 
 # Search for Sentinel-1 SAR data (VV polarization, IW mode, GRD products)
 products = api.query(
